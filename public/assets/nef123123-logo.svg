@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="NEF123123 — Navigant Economic Freedom Emblem">
+  <defs>
+    <clipPath id="medallionClip">
+      <circle cx="250" cy="250" r="242" />
+    </clipPath>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#196db0" />
+      <stop offset="45%" stop-color="#5fb2e4" />
+      <stop offset="85%" stop-color="#cbe7f7" />
+      <stop offset="100%" stop-color="#f7fbfe" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="56%" r="36%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#fff8e3" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="fieldLeft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c9f32" />
+      <stop offset="55%" stop-color="#b4c450" />
+      <stop offset="100%" stop-color="#607924" />
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dfe2e5" />
+      <stop offset="30%" stop-color="#8b8e92" />
+      <stop offset="100%" stop-color="#3c3f43" />
+    </linearGradient>
+    <linearGradient id="bezelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8e949a" />
+      <stop offset="50%" stop-color="#d4dae0" />
+      <stop offset="100%" stop-color="#697077" />
+    </linearGradient>
+    <path id="topArc" d="M 52,250 A 198,198 0 0,1 448,250" />
+    <path id="bottomArc" d="M 46,272 A 206,206 0 0,0 454,272" />
+  </defs>
+
+  <!-- Outer bezel background -->
+  <circle cx="250" cy="250" r="250" fill="#080a0d" />
+  <circle cx="250" cy="250" r="245" fill="none" stroke="url(#bezelGrad)" stroke-width="5" />
+
+  <!-- Landscape interior clipped inside medallion -->
+  <g clip-path="url(#medallionClip)">
+    <!-- Sky -->
+    <rect x="0" y="0" width="500" height="290" fill="url(#skyGrad)" />
+    <!-- Soft cloud bands -->
+    <ellipse cx="145" cy="128" rx="115" ry="26" fill="#ffffff" opacity="0.45" />
+    <ellipse cx="360" cy="112" rx="125" ry="28" fill="#ffffff" opacity="0.4" />
+    <ellipse cx="255" cy="168" rx="175" ry="34" fill="#ffffff" opacity="0.55" />
+
+    <!-- Horizon fields -->
+    <rect x="0" y="276" width="500" height="224" fill="url(#fieldLeft)" />
+    <rect x="0" y="276" width="500" height="26" fill="#708930" opacity="0.55" />
+
+    <!-- Receding asphalt highway -->
+    <polygon points="236,276 264,276 472,500 28,500" fill="url(#roadGrad)" />
+    <!-- Road shoulders -->
+    <polygon points="236,276 240,276 44,500 28,500" fill="#d9dcdf" opacity="0.7" />
+    <polygon points="260,276 264,276 472,500 456,500" fill="#d9dcdf" opacity="0.7" />
+    <!-- White center line -->
+    <polygon points="248,276 252,276 268,500 232,500" fill="#f7f9fb" opacity="0.92" />
+
+    <!-- Sunburst horizon glow -->
+    <circle cx="250" cy="268" r="190" fill="url(#sunGlow)" />
+  </g>
+
+  <!-- Inner concentric borders matching emblem -->
+  <circle cx="250" cy="250" r="233" fill="none" stroke="#111317" stroke-width="4" />
+  <circle cx="250" cy="250" r="186" fill="none" stroke="#ef2d25" stroke-width="3.5" />
+
+  <!-- Top & bottom curved title lettering -->
+  <text fill="#0d1014" font-family="'DM Sans', 'Arial Black', Arial, sans-serif" font-size="33" font-weight="800" letter-spacing="10">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">NAVIGANT</textPath>
+  </text>
+  <text fill="#0d1014" font-family="'DM Sans', 'Arial Black', Arial, sans-serif" font-size="33" font-weight="800" letter-spacing="11">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">FREEDOM</textPath>
+  </text>
+
+  <!-- Center identity text -->
+  <text x="250" y="175" text-anchor="middle" fill="#0d1014" font-family="'DM Sans', Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="5">ECONOMIC</text>
+  <text x="250" y="278" text-anchor="middle" fill="#f02820" font-family="'Arial Narrow', 'DM Sans', Arial, sans-serif" font-size="112" font-weight="800" letter-spacing="-1">NEF</text>
+  <text x="250" y="346" text-anchor="middle" fill="#0d1014" font-family="'DM Sans', Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="9">123123</text>
+  <rect x="206" y="362" width="88" height="4.5" rx="2.25" fill="#0d1014" />
+</svg>
