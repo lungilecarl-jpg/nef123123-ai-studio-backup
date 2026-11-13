@@ -1,33 +1,49 @@
-import regeneratedImg from './src/assets/images/regenerated_image_1794523988514.jpg';
+const regeneratedImg =
+  document.getElementById('heroSlideMovementImgRef')?.getAttribute('href') ||
+  './src/assets/images/regenerated_image_1794523988514.jpg';
+
+const coalitionImg =
+  document.querySelector('#openCoalitionImage img')?.getAttribute('src') ||
+  './src/assets/images/assets/aistudio/image_e921a8c9.png';
 
 const today = new Date();
-document.getElementById('today').textContent = today.toLocaleDateString('en-ZA', {
-  day: '2-digit',
-  month: 'short',
-  year: 'numeric',
-}).toUpperCase();
-document.getElementById('year').textContent = today.getFullYear();
+const todayEl = document.getElementById('today');
+if (todayEl) {
+  todayEl.textContent = today
+    .toLocaleDateString('en-ZA', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    })
+    .toUpperCase();
+}
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = today.getFullYear();
+}
 
 const toggle = document.getElementById('menuToggle');
 const nav = document.getElementById('mainNav');
-toggle.addEventListener('click', () => {
+toggle?.addEventListener('click', () => {
+  if (!nav) return;
   const open = nav.classList.toggle('open');
   toggle.setAttribute('aria-expanded', String(open));
   toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 });
 
-nav.querySelectorAll('a').forEach((link) =>
+nav?.querySelectorAll('a').forEach((link) =>
   link.addEventListener('click', () => {
     nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-expanded', 'false');
     nav.querySelectorAll('a').forEach((item) => item.classList.remove('active'));
     link.classList.add('active');
   })
 );
 
-document.getElementById('joinForm').addEventListener('submit', (event) => {
+document.getElementById('joinForm')?.addEventListener('submit', (event) => {
   event.preventDefault();
   const message = document.getElementById('formMessage');
+  if (!message) return;
   message.textContent =
     'Thank you for your interest. The subscription service must be connected by the site administrator before sign-ups can be stored.';
   message.classList.add('form-success');
@@ -38,7 +54,7 @@ const heroSlides = [
   {
     href: 'https://link.amazon/B0iCzskXw',
     external: true,
-    img: '/assets/aistudio/image_a0935a15.png',
+    img: document.getElementById('heroSlideImg')?.getAttribute('src') || '/assets/aistudio/image_a0935a15.png',
     alt: 'Amazon affiliate storefront sign',
     label: 'AMAZON AFFILIATE',
     category: 'FEATURED SELECTION',
@@ -187,7 +203,7 @@ const articleCatalog = {
     dot: 'N',
     category: 'SOUTH AFRICA · POLITICS',
     title: 'DA Makes U-Turn, Invites EFF and MK Party to Municipal Coalition Talks',
-    img: './src/assets/images/assets/aistudio/image_e921a8c9.png',
+    img: coalitionImg,
     alt: 'EFF leader Julius Malema waving in an EFF cap surrounded by supporters',
     imgPosition: 'center 14%',
     source: 'Sources cited: TimesLIVE & SABC',
